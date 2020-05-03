@@ -4,7 +4,7 @@ dist: bionic
 script:
   - sudo apt-get -y install python3-pip python3-setuptools python3-wheel # fontforge
   - sudo pip3 install afdko
-  - wget -c "https://fossies.org/linux/misc/old/ghost/AFPL/GhostPCL/urwfonts-1.41.tar.gz"
+  - wget -c "https://fossies.org/linux/misc/old/ghost/AFPL/GhostPCL/urwfonts-8.71.tar.gz"
   - tar xf urwfonts-*.tar.gz
   - cd urwfonts-*/
   - |2
