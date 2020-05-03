@@ -10,7 +10,7 @@ script:
   - |2
     FILENAMES=$(ls U001*.ttf | sed -e 's|.ttf||g')
     for FILENAME in $FILENAMES; do
-      makeotf -f "${FILENAME}.ttf"
+      makeotf -f "${FILENAME}.ttf" -o "${FILENAME}.otf"
     done
 
 after_success:
