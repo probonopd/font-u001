@@ -1,0 +1,24 @@
+language: minimal
+dist: bionic
+
+script:
+  - sudo apt-get -y install python3-pip python3-setuptools python3-wheel # fontforge
+  - sudo pip3 install afdko
+  - wget -c "https://fossies.org/linux/misc/old/ghost/AFPL/GhostPCL/urwfonts-1.41.tar.gz"
+  - tar xf urwfonts-*.tar.gz
+  - cd urwfonts-*/
+  - |2
+    FILENAMES=$(ls U001*.ttf | sed -e 's|.ttf||g')
+    for FILENAME in $FILENAMES; do
+      makeotf -f "${FILENAME}.pfb"
+      otf2ttf "${FILENAME}.otf"
+    done
+
+after_success:
+  - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
+  - bash upload.sh U001*.otf U001*.ttf
+  
+branches:
+  except:
+    - # Do not build tags that we create when we upload to GitHub Releases
+    - /^(?i:continuous)/
