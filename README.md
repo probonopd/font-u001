@@ -1,4 +1,4 @@
-# U001
+# U001 [![Build Status](https://travis-ci.com/probonopd/font-u001.svg?branch=master)](https://travis-ci.com/probonopd/font-u001)
 
 > An Univers-like typeface that comes with GhostPDL made by URW++. It is released under the Aladdin Free Public License.
 
